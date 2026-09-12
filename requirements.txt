@@ -1,0 +1,2 @@
+# Project metadata is the single source of runtime dependencies.
+.

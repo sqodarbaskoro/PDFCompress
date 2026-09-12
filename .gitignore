@@ -1,0 +1,17 @@
+# Documents stay local, including originals and compressed copies.
+*.[pP][dD][fF]
+.pdf-compressor-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+.vscode/
+.idea/

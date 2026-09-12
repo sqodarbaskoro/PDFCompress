@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sy_pdf_compressor"
+version = "0.1.0"
+authors = [{ name = "Sri Yanto Qodarbaskoro", email = "sqodarbaskoro@gmail.com" }]
+description = "A small Tkinter desktop application for local PDF compression"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pikepdf>=9.0"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[project.gui-scripts]
+sy_pdf_compressor = "pdf_compressor.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["pdf_compressor*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "D"]
+ignore = ["D203", "D213"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: runs an installed Ghostscript executable"]
